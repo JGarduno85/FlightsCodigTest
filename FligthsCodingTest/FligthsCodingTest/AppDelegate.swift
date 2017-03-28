@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         ///
+       // MagicalRecord.setupCoreDataStack(withStoreNamed: "FligthsCodingTest")
+        
+        
         /// MainViewController is used to show a Basic LoginView
         let mainViewController = FCTSearchAirportViewController()
         let mainNavigationViewController =  UINavigationController(rootViewController: mainViewController)

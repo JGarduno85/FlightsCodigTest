@@ -44,13 +44,7 @@ class APIClient{
         
         afthttpSessionManager?.requestSerializer = AFJSONRequestSerializer()
         afthttpSessionManager?.responseSerializer = AFJSONResponseSerializer()
-        
-        
-        
-        
         _ = afthttpSessionManager?.get(endPoint, parameters: dataDictionary, progress:{ (progress:Progress) in
-            
-            
             
         }, success:{(task:URLSessionDataTask?,response:Any?) in
             let responseString = response as? Dictionary<String,Any>

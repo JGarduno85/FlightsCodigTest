@@ -10,6 +10,8 @@
 #define BridgeFile_h
 
 #import "AFHTTPSessionManager.h"
+#import "MagicalRecord/MagicalRecord.h"
+#import "MagicalRecord/MagicalRecord+ShorthandMethods.h"
 
 
 #endif /* BridgeFile_h */

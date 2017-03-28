@@ -18,3 +18,19 @@ import Foundation
 ///
 ///     urlbase/1/airports/SEA/flights/10/120
 let airportsEndPoint = "%@/1/airports/{airport code}/flights/{minutes past}/{minutes future}"
+
+
+
+
+
+
+/// CoreData Entities
+/// Airport
+let airportEntity = "Airport"
+let airportCode = "code"
+
+
+
+/// SearchAirport tableView
+///
+let historySectionTitle = "History"

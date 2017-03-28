@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+
+class Airport: NSManagedObject {
+    @NSManaged var code: String?
+}

@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var airportName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
