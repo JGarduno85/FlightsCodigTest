@@ -92,8 +92,6 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 makeFlightSearch(forAirport: code)
             }
         }
-    
-        
     }
 
     
@@ -101,11 +99,15 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         guard !name.isEmpty else{
             return
         }
-        save(code: name)
+        
+        
+        
+       // FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name])
+        //save(code: name)
     }
     
     
-    func save(code: String) {
+   /* func save(code: String) {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
                 return
@@ -131,6 +133,6 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
-    }
+    }*/
 
 }
