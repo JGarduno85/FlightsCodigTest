@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCTMainViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCTMainViewController" customModule="FligthsCodingTest" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -14,7 +19,59 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMF-u4-BeX">
+                    <rect key="frame" x="40" y="90" width="295" height="129.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KMF-u4-BeX" secondAttribute="height" multiplier="73:32" id="kiS-2q-TfP"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sBm-UI-xhd">
+                    <rect key="frame" x="40" y="288" width="295" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8p6-c5-6AZ">
+                    <rect key="frame" x="40" y="361" width="295" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E1-YU-boi">
+                    <rect key="frame" x="40" y="432" width="295" height="30"/>
+                    <state key="normal" title="Login"/>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="vxy-fy-2a2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lu5-gk-fnb">
+                    <rect key="frame" x="40" y="527" width="295" height="30"/>
+                    <state key="normal" title="Anonimous"/>
+                    <connections>
+                        <action selector="anonimousLogin:" destination="-1" eventType="touchUpInside" id="Bfr-SK-cKV"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sBm-UI-xhd" firstAttribute="top" secondItem="KMF-u4-BeX" secondAttribute="bottom" constant="68" id="1Rc-vP-Kct"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="6hX-OH-zdo"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="leading" secondItem="3E1-YU-boi" secondAttribute="leading" id="DQF-Rk-IHv"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="trailing" secondItem="3E1-YU-boi" secondAttribute="trailing" id="Eyh-cc-32Q"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="leading" secondItem="lu5-gk-fnb" secondAttribute="leading" id="HKj-is-szc"/>
+                <constraint firstItem="8p6-c5-6AZ" firstAttribute="top" secondItem="sBm-UI-xhd" secondAttribute="bottom" constant="43" id="Jec-5L-8sb"/>
+                <constraint firstAttribute="trailing" secondItem="sBm-UI-xhd" secondAttribute="trailing" constant="40" id="PTZ-NF-nDg"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="trailing" secondItem="lu5-gk-fnb" secondAttribute="trailing" id="QVh-tY-uab"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="trailing" secondItem="sBm-UI-xhd" secondAttribute="trailing" id="S0o-l5-QVh"/>
+                <constraint firstItem="8p6-c5-6AZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="W2U-iO-vHL"/>
+                <constraint firstItem="sBm-UI-xhd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="YSI-8o-7Ax"/>
+                <constraint firstItem="lu5-gk-fnb" firstAttribute="top" secondItem="3E1-YU-boi" secondAttribute="bottom" constant="65" id="Z8h-T1-9jt"/>
+                <constraint firstItem="KMF-u4-BeX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="90" id="buf-rW-NmV"/>
+                <constraint firstAttribute="trailing" secondItem="8p6-c5-6AZ" secondAttribute="trailing" constant="40" id="dP4-Vj-xnG"/>
+                <constraint firstAttribute="bottom" secondItem="lu5-gk-fnb" secondAttribute="bottom" constant="110" id="yep-ve-wJb"/>
+            </constraints>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
 </document>

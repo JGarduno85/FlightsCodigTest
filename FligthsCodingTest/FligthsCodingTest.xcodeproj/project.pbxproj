@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */; };
-		75DD129F1E8AC3DF00EAC226 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD129E1E8AC3DF00EAC226 /* ViewController.swift */; };
-		75DD12A21E8AC3DF00EAC226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12A01E8AC3DF00EAC226 /* Main.storyboard */; };
 		75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12A31E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld */; };
 		75DD12A71E8AC3DF00EAC226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */; };
 		75DD12AA1E8AC3DF00EAC226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12A81E8AC3DF00EAC226 /* LaunchScreen.storyboard */; };
 		75DD12B51E8AC3E000EAC226 /* FligthsCodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12B41E8AC3E000EAC226 /* FligthsCodingTestTests.swift */; };
 		75DD12C01E8AC3E000EAC226 /* FligthsCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12BF1E8AC3E000EAC226 /* FligthsCodingTestUITests.swift */; };
+		75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */; };
+		75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,6 @@
 /* Begin PBXFileReference section */
 		75DD12991E8AC3DF00EAC226 /* FligthsCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FligthsCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75DD129E1E8AC3DF00EAC226 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75DD12A11E8AC3DF00EAC226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75DD12A41E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FligthsCodingTest.xcdatamodel; sourceTree = "<group>"; };
 		75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75DD12A91E8AC3DF00EAC226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +47,8 @@
 		75DD12BB1E8AC3E000EAC226 /* FligthsCodingTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FligthsCodingTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD12BF1E8AC3E000EAC226 /* FligthsCodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligthsCodingTestUITests.swift; sourceTree = "<group>"; };
 		75DD12C11E8AC3E000EAC226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTMainViewController.swift; sourceTree = "<group>"; };
+		75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTMainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */,
-				75DD129E1E8AC3DF00EAC226 /* ViewController.swift */,
-				75DD12A01E8AC3DF00EAC226 /* Main.storyboard */,
+				75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */,
+				75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */,
 				75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */,
 				75DD12A81E8AC3DF00EAC226 /* LaunchScreen.storyboard */,
 				75DD12AB1E8AC3DF00EAC226 /* Info.plist */,
@@ -240,7 +240,7 @@
 			files = (
 				75DD12AA1E8AC3DF00EAC226 /* LaunchScreen.storyboard in Resources */,
 				75DD12A71E8AC3DF00EAC226 /* Assets.xcassets in Resources */,
-				75DD12A21E8AC3DF00EAC226 /* Main.storyboard in Resources */,
+				75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75DD129F1E8AC3DF00EAC226 /* ViewController.swift in Sources */,
+				75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */,
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
 				75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */,
 			);
@@ -303,14 +303,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		75DD12A01E8AC3DF00EAC226 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75DD12A11E8AC3DF00EAC226 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75DD12A81E8AC3DF00EAC226 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

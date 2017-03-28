@@ -12,7 +12,6 @@ class FCTMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +21,15 @@ class FCTMainViewController: UIViewController {
     }
     
 
+    @IBAction func login(_ sender: Any) {
+    }
+    @IBAction func anonimousLogin(_ sender: Any) {
+    }
+    
+    
+    func requestLogin(){
+        
+    }
     /*
     // MARK: - Navigation
 
