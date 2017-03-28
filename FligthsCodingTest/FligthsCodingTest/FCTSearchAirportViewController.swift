@@ -86,6 +86,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
         if let code = searchBar.text{
             if !code.isEmpty{
                 makeFlightSearch(forAirport: code)
@@ -101,14 +102,23 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         
         let endpoint = String(format:airportsEndPoint,name,10,120)
         let getMethod = "GET"
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in
+            
+            
             DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
                 //self.responseText.text = response.debugDescription
                 //print(response)
+               // FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name])
+                
+                
+                
                 
             }
         }, failureClosure: {(error:Error) in
             DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
                 let alert = UIAlertController(title: "Error", message: "It appears there's a problem with the server", preferredStyle: UIAlertControllerStyle.alert)
                 let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
                 alert.addAction(alertAction)
@@ -116,7 +126,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             }
         })
         
-       // FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name])
+       
         //save(code: name)
     }
     

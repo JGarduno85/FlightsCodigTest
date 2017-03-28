@@ -12,6 +12,7 @@
 #import "AFHTTPSessionManager.h"
 #import "MagicalRecord/MagicalRecord.h"
 #import "MagicalRecord/MagicalRecord+ShorthandMethods.h"
+#import "MBProgressHUD.h"
 
 
 #endif /* BridgeFile_h */
