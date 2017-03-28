@@ -15,6 +15,8 @@
 		75DD12C01E8AC3E000EAC226 /* FligthsCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12BF1E8AC3E000EAC226 /* FligthsCodingTestUITests.swift */; };
 		75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */; };
 		75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */; };
+		75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */; };
+		75DD12DD1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		75DD12C11E8AC3E000EAC226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTMainViewController.swift; sourceTree = "<group>"; };
 		75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTMainViewController.xib; sourceTree = "<group>"; };
+		75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTSearchAirportViewController.swift; sourceTree = "<group>"; };
+		75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTSearchAirportViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75DD12D91E8AC9FD00EAC226 /* SearchAirport */,
 				75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */,
 				75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */,
 				75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */,
@@ -126,6 +131,15 @@
 				75DD12C11E8AC3E000EAC226 /* Info.plist */,
 			);
 			path = FligthsCodingTestUITests;
+			sourceTree = "<group>";
+		};
+		75DD12D91E8AC9FD00EAC226 /* SearchAirport */ = {
+			isa = PBXGroup;
+			children = (
+				75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */,
+				75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */,
+			);
+			name = SearchAirport;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +254,7 @@
 			files = (
 				75DD12AA1E8AC3DF00EAC226 /* LaunchScreen.storyboard in Resources */,
 				75DD12A71E8AC3DF00EAC226 /* Assets.xcassets in Resources */,
+				75DD12DD1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib in Resources */,
 				75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +282,7 @@
 			files = (
 				75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */,
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
+				75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */,
 				75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
