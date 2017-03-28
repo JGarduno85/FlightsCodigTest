@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         ///
         /// MainViewController is used to show a Basic LoginView
-        let mainViewController = FCTMainViewController()
+        let mainViewController = FCTSearchAirportViewController()
         let mainNavigationViewController =  UINavigationController(rootViewController: mainViewController)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = mainNavigationViewController
