@@ -19,6 +19,7 @@
 		75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */; };
 		75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */; };
 		75DD12DD1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */; };
+		75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */; };
 		FD919FD5BEA5A7AF266C46BA /* libPods-FligthsCodingTestUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTMainViewController.xib; sourceTree = "<group>"; };
 		75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTSearchAirportViewController.swift; sourceTree = "<group>"; };
 		75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTSearchAirportViewController.xib; sourceTree = "<group>"; };
+		75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		88B6AE3DAE3D324D4E3F2F0B /* Pods-FligthsCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8DE984CED0A44D9018F72E /* Pods-FligthsCodingTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93ECDE11033FF78E68259D1B /* Pods-FligthsCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,8 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,
+				75DD12DE1E8AD57800EAC226 /* Values */,
 				75DD12D91E8AC9FD00EAC226 /* SearchAirport */,
 				75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */,
 				75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */,
@@ -173,6 +177,21 @@
 				75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */,
 			);
 			name = SearchAirport;
+			sourceTree = "<group>";
+		};
+		75DD12DE1E8AD57800EAC226 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */,
+			);
+			name = Values;
+			sourceTree = "<group>";
+		};
+		75DD12E11E8ADAB800EAC226 /* NetworkManagement */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetworkManagement;
 			sourceTree = "<group>";
 		};
 		BB6B4AE8FE3AAEDCDC0DA837 /* Pods */ = {
@@ -481,6 +500,7 @@
 			files = (
 				75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */,
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
+				75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */,
 				75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */,
 				75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */,
 			);
@@ -911,6 +931,7 @@
 				75DD12D61E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75DD12C71E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestTests" */ = {
 			isa = XCConfigurationList;
@@ -921,6 +942,7 @@
 				75DD12D71E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75DD12CA1E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -931,6 +953,7 @@
 				75DD12D81E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
