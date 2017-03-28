@@ -49,7 +49,6 @@ class APIClient{
         _ = afthttpSessionManager?.get(endPoint, parameters: dataDictionary, progress:{ (progress:Progress) in
             
         }, success:{(task:URLSessionDataTask?,response:Any?) in
-            //let responseString =   try JSONSerialization.jsonObject(with: response!, options: []) as Array //response as? Dictionary<String,Any>
             if response != nil{
                 successClosure(response)
             }else{

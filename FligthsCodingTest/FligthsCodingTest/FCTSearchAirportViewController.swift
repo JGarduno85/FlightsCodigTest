@@ -14,7 +14,6 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     @IBOutlet weak var searchBarAirports: UISearchBar!
     @IBOutlet weak var resultsTableView: UITableView!
     
-    var searchActive : Bool = false
     var data:[NSManagedObject] = []
 
     let cellIdentifier = "Cell"

@@ -3,7 +3,13 @@
     <entity name="Airport" representedClassName="Airport" syncable="YES" codeGenerationType="class">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Flight" representedClassName="Flight" syncable="YES" codeGenerationType="class">
+        <attribute name="arrival" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="origin" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Airport" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="Flight" positionX="-54" positionY="0" width="128" height="90"/>
     </elements>
 </model>
