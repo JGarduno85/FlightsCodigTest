@@ -10,9 +10,12 @@ import UIKit
 
 class FCTSearchAirportViewController: UIViewController {
 
+    @IBOutlet weak var searchBarAirports: UISearchBar!
+    let resultsAirportTableView = FCTSearchAirportTableViewController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +23,14 @@ class FCTSearchAirportViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func setupResultsAirportsTableView(){
+        
+    }
+    
+    
+    
     
 
     /*
