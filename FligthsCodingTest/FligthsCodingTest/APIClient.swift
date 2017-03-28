@@ -14,7 +14,7 @@ import Foundation
 class APIClient{
     
     /// base url retrieve from the userdefaults
-    var baseUrlString:String? = Bundle.main.infoDictionary?["WebServicesBaseURLKey"] as? String
+    var baseUrlString:String? = Bundle.main.infoDictionary?["BaseUrl"] as? String
     /// class signleton
     static let sharedInstance = APIClient()
     
@@ -31,6 +31,9 @@ class APIClient{
     private func createSessionManager(){
         let baseUrl = URL(string:baseUrlString!)
         afthttpSessionManager = AFHTTPSessionManager(baseURL: baseUrl)
+        afthttpSessionManager?.requestSerializer = AFJSONRequestSerializer()
+        afthttpSessionManager?.responseSerializer = AFJSONResponseSerializer()
+        afthttpSessionManager?.requestSerializer.setValue(authorizationValue, forHTTPHeaderField:authorizationHeader)
     }
     
     
@@ -42,13 +45,12 @@ class APIClient{
     ///   - failureClosure: closure used to catch the data if the server retrieve an error
     public func clientCallWithEndPointUrl(endPoint:String,method:String,dataDictionary:Dictionary<String,String>?,successClosure:@escaping (Any?) -> (Void),failureClosure:@escaping (Error) -> (Void)){
         
-        afthttpSessionManager?.requestSerializer = AFJSONRequestSerializer()
-        afthttpSessionManager?.responseSerializer = AFJSONResponseSerializer()
+        
         _ = afthttpSessionManager?.get(endPoint, parameters: dataDictionary, progress:{ (progress:Progress) in
             
         }, success:{(task:URLSessionDataTask?,response:Any?) in
-            let responseString = response as? Dictionary<String,Any>
-            if responseString != nil{
+            //let responseString =   try JSONSerialization.jsonObject(with: response!, options: []) as Array //response as? Dictionary<String,Any>
+            if response != nil{
                 successClosure(response)
             }else{
                 successClosure(nil)

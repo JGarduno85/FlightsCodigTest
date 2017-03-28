@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BaseUrl</key>
-	<string>${WebServiceBaseUrl}</string>
+	<string>$(WEB_SERVICE_BASE_URL)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

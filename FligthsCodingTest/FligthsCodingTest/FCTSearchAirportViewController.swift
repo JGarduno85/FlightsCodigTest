@@ -45,7 +45,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             appDelegate.persistentContainer.viewContext
         
         let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName: airportEntity)
+            NSFetchRequest<NSManagedObject>(entityName:airportEntity)
         
         do {
             data = try managedContext.fetch(fetchRequest)
@@ -100,7 +100,22 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             return
         }
         
-        
+        let endpoint = String(format:airportsEndPoint,name,10,120)
+        let getMethod = "GET"
+        APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in
+            DispatchQueue.main.async {
+                //self.responseText.text = response.debugDescription
+                //print(response)
+                
+            }
+        }, failureClosure: {(error:Error) in
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Error", message: "It appears there's a problem with the server", preferredStyle: UIAlertControllerStyle.alert)
+                let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+                alert.addAction(alertAction)
+                self.present(alert, animated: true, completion: nil)
+            }
+        })
         
        // FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name])
         //save(code: name)

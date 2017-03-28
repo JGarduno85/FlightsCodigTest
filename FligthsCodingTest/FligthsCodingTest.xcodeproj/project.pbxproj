@@ -126,6 +126,13 @@
 			name = CoreDataManagement;
 			sourceTree = "<group>";
 		};
+		75AA9E441E8B1C4200377ABF /* Flights */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flights;
+			sourceTree = "<group>";
+		};
 		75DD12901E8AC3DE00EAC226 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +158,7 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75AA9E441E8B1C4200377ABF /* Flights */,
 				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
 				75DD12F41E8AF7EE00EAC226 /* Model */,
 				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,
@@ -686,7 +694,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Debug;
 		};
@@ -702,7 +710,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Release;
 		};
@@ -822,7 +830,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Beta_Release;
 		};
@@ -911,7 +919,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Alpha_Release;
 		};
