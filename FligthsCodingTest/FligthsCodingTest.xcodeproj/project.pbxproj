@@ -163,13 +163,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		75AA9E4E1E8B247900377ABF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Utilities;
-			sourceTree = "<group>";
-		};
 		75DD12901E8AC3DE00EAC226 = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				756F61521E8B3D7A00C6C427 /* Model */,
-				75AA9E4E1E8B247900377ABF /* Utilities */,
 				75AA9E441E8B1C4200377ABF /* Flights */,
 				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
 				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,

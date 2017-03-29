@@ -21,9 +21,21 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         setupSearchBar()
         setupTableView()
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if FCTStorageManager.sharedInstance.getUserDefault(forkey: "goToFlightsView") != nil
+        {
+            FCTStorageManager.sharedInstance.deleteUserDefault(forKey:"goToFlightsView")
+            let flightsViewController = FCTFlightsViewController()
+            flightsViewController.openFromDelegate = true
+            self.navigationController?.pushViewController(flightsViewController, animated: true)
+        }
+        FCTStorageManager.sharedInstance.goToFlights = false
     }
     
     func setupSearchBar(){
@@ -36,6 +48,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         data = FCTStorageManager.sharedInstance.fetchEntities(name: airportEntity) ?? []
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,6 +118,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 
                 let flightsViewController = FCTFlightsViewController()
                 flightsViewController.data = responseArray
+                flightsViewController.saveData()
                 self.navigationController?.pushViewController(flightsViewController, animated: true)
                 let airportArray =  self.data.filter({(aManagedObject:NSManagedObject) -> (Bool) in
                     let airport = aManagedObject as! Airport
@@ -114,6 +128,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 if airportArray.count == 0
                 {
                     if let entity = FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name]){
+                        FCTStorageManager.sharedInstance.save()
                         self.data.append(entity)
                         self.resultsTableView.reloadData()
                     }
