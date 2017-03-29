@@ -231,11 +231,20 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     
         MBProgressHUD.showAdded(to: self.view, animated: true)
             let sortedArray = objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
-                if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight, let arrivalDat1 = obj1.arrivalDate,let arrivalTm1 =  obj1.arrivalTime,let arrivalDat2 = obj2.arrivalDate,let arrivalTm2 = obj2.arrivalTime{
-                    let date1 = getDateTime(from:String(format:"%@T%@",arrivalDat1,arrivalTm1), with: "mm-dd-yyyy'T'HH:mm")
-                    let date2 = getDateTime(from:String(format:"%@T%@",arrivalDat2,arrivalTm2), with: "mm-dd-yyyy'T'HH:mm")
+                if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight, let arrivalDat1 = obj1.arrivalDate,let arrivalDat2 = obj2.arrivalDate{
+                    
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+                    dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+                    let date1 = dateFormatter.date(from:arrivalDat1)
+                    let date2 = dateFormatter.date(from:arrivalDat2)
                     if let datetemp1 = date1,let datetemp2 = date2{
-                        return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
+                        if(datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending{
+                            return true
+                        }else{
+                            return false
+                        }
                     }
                     else{
                         return false

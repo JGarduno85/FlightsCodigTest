@@ -170,7 +170,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 })
                 if arrayFiltered.count == 0
                 {
-                    let alert = UIAlertController(title: "Message", message: "The data to show doesn't meet the criteria of 10 minutes before and 1 hour after your local time", preferredStyle: UIAlertControllerStyle.alert)
+                    let alert = UIAlertController(title: "Message", message: "The data to show doesn't meet the criteria  of 1 hour after your local time", preferredStyle: UIAlertControllerStyle.alert)
                     let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
                     alert.addAction(alertAction)
                     self.present(alert, animated: true, completion: nil)
