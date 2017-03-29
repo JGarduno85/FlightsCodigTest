@@ -17,6 +17,8 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     var openFromDelegate = false
     var timeManager:TimeManager?
     var currentAirport:String?
+    let sortedThread = DispatchQueue(label: "sortedThread")
+    var isFiltering = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -69,7 +71,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         timeManager?.delegate = nil
         timeManager = nil
         FCTStorageManager.sharedInstance.saveUserDefault(forkey: "currentAirport", value: currentAirport ?? "")
-        
+        //sortedThread.cancelAllOperations()
     }
     
     /// Create the core data entities from the json rettrieve and save the context
@@ -195,13 +197,12 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
             return
         }
         
-        let sortedThread = DispatchQueue(label: "sortedThread")
         weak var weakSelf  = self
         sortedThread.async{
             let sortedArray = weakSelf?.objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
-                if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight{
-                    let date1 = weakSelf?.getDateTime(from:String(format:"%@T%@",obj1.arrivalDate!,obj1.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
-                    let date2 = weakSelf?.getDateTime(from:String(format:"%@T%@",obj2.arrivalDate!,obj2.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
+                if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight, let arrivalDat1 = obj1.arrivalDate,let arrivalTm1 =  obj1.arrivalTime,let arrivalDat2 = obj2.arrivalDate,let arrivalTm2 = obj2.arrivalTime{
+                    let date1 = weakSelf?.getDateTime(from:String(format:"%@T%@",arrivalDat1,arrivalTm1), with: "mm-dd-yyyy'T'HH:mm")
+                    let date2 = weakSelf?.getDateTime(from:String(format:"%@T%@",arrivalDat2,arrivalTm2), with: "mm-dd-yyyy'T'HH:mm")
                     if let datetemp1 = date1,let datetemp2 = date2{
                         return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
                     }
@@ -214,6 +215,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
                 
             })
             weakSelf?.objectManagedData.removeAll()
+            
             if let tempSortedArray = sortedArray{
                 weakSelf?.objectManagedData = Array(tempSortedArray)
                 DispatchQueue.main.async {
