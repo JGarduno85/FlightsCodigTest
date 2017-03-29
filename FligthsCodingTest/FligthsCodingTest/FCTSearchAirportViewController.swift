@@ -21,7 +21,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.navigationItem.title = "Flights search"
         setupSearchBar()
         setupTableView()
 
@@ -38,10 +38,13 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         FCTStorageManager.sharedInstance.goToFlights = false
     }
     
+    /// Setup the searchbar data
     func setupSearchBar(){
         searchBarAirports.delegate = self
+        searchBarAirports.autocapitalizationType = .allCharacters
     }
     
+    /// Setup the tableview data
     func setupTableView(){
         
         self.resultsTableView.register(UINib(nibName:"TableViewCell",bundle:nil), forCellReuseIdentifier: cellIdentifier)
@@ -82,6 +85,15 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         let code = airport.value(forKey: airportCode) as! String
         makeFlightSearch(forAirport: code)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text.rangeOfCharacter(from:CharacterSet.letters) != nil) || text.isEmpty{
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -93,13 +105,17 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         }
     }
 
-    
+
+    /// Make the request to the API using the ClientAPI
+    ///
+    /// - Parameters:
+    ///   - name:airport 3 digits code
     func makeFlightSearch(forAirport name:String){
         guard !name.isEmpty else{
             return
         }
         
-        let endpoint = String(format:airportsEndPoint,name,10,120)
+        let endpoint = String(format:airportsEndPoint,name,10,60)
         let getMethod = "GET"
         MBProgressHUD.showAdded(to: self.view, animated: true)
         APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in
@@ -118,6 +134,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 
                 let flightsViewController = FCTFlightsViewController()
                 flightsViewController.data = responseArray
+                flightsViewController.currentAirport = name
                 flightsViewController.saveData()
                 self.navigationController?.pushViewController(flightsViewController, animated: true)
                 let airportArray =  self.data.filter({(aManagedObject:NSManagedObject) -> (Bool) in
@@ -144,34 +161,5 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             }
         })
     }
-    
-    
-   /* func save(code: String) {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        
-        let entity =
-            NSEntityDescription.entity(forEntityName: "Airport",
-                                       in: managedContext)!
-        
-        let airport = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        
-       airport.setValue(code, forKeyPath: "code")
-        
-        do {
-            try managedContext.save()
-            data.append(airport)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }*/
 
 }
