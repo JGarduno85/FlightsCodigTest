@@ -17,8 +17,6 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     var openFromDelegate = false
     var timeManager:TimeManager?
     var currentAirport:String?
-    let sortedThread = DispatchQueue(label: "sortedThread")
-    var isFiltering = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -71,11 +69,11 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         timeManager?.delegate = nil
         timeManager = nil
         FCTStorageManager.sharedInstance.saveUserDefault(forkey: "currentAirport", value: currentAirport ?? "")
-        //sortedThread.cancelAllOperations()
     }
     
     /// Create the core data entities from the json rettrieve and save the context
     func saveData(){
+        
         for item in data{
             let flight = item as! NSDictionary
             let number = flight.value(forKey: "FltId") as! String
@@ -87,6 +85,8 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
               objectManagedData.append(entity)
             }
         }
+        
+        objectManagedData = filterArrivalTime()
         FCTStorageManager.sharedInstance.save()
         
     }
@@ -127,6 +127,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     func setupTableView()
     {
         self.resultsTableView.register(UINib(nibName:"FCTFlightCellTableViewCell",bundle:nil),forCellReuseIdentifier: cellIdentifier)
+        
     }
     
     ///Used to detect when the user press the back button from the navigationBar and procced to delete the objects stored on CoreData.
@@ -192,17 +193,16 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     
     
     
-    @IBAction func filterArrivalTime(_ sender: Any) {
+   func filterArrivalTime()  -> [NSManagedObject]{
         guard objectManagedData.count > 0 else{
-            return
+            return objectManagedData
         }
-        
-        weak var weakSelf  = self
-        sortedThread.async{
-            let sortedArray = weakSelf?.objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
+    
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+            let sortedArray = objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
                 if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight, let arrivalDat1 = obj1.arrivalDate,let arrivalTm1 =  obj1.arrivalTime,let arrivalDat2 = obj2.arrivalDate,let arrivalTm2 = obj2.arrivalTime{
-                    let date1 = weakSelf?.getDateTime(from:String(format:"%@T%@",arrivalDat1,arrivalTm1), with: "mm-dd-yyyy'T'HH:mm")
-                    let date2 = weakSelf?.getDateTime(from:String(format:"%@T%@",arrivalDat2,arrivalTm2), with: "mm-dd-yyyy'T'HH:mm")
+                    let date1 = getDateTime(from:String(format:"%@T%@",arrivalDat1,arrivalTm1), with: "mm-dd-yyyy'T'HH:mm")
+                    let date2 = getDateTime(from:String(format:"%@T%@",arrivalDat2,arrivalTm2), with: "mm-dd-yyyy'T'HH:mm")
                     if let datetemp1 = date1,let datetemp2 = date2{
                         return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
                     }
@@ -214,14 +214,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
                 return false
                 
             })
-            weakSelf?.objectManagedData.removeAll()
-            
-            if let tempSortedArray = sortedArray{
-                weakSelf?.objectManagedData = Array(tempSortedArray)
-                DispatchQueue.main.async {
-                    weakSelf?.resultsTableView.reloadData()
-                }
-            }
-        }
+        MBProgressHUD.hide(for: self.view, animated: true)
+        return sortedArray
     }
 }

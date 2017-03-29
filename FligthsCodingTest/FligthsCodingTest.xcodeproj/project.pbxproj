@@ -58,7 +58,7 @@
 		75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTFlightsViewController.xib; sourceTree = "<group>"; };
 		75AA9E4A1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTFlightCellTableViewCell.swift; sourceTree = "<group>"; };
 		75AA9E4B1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTFlightCellTableViewCell.xib; sourceTree = "<group>"; };
-		75DD12991E8AC3DF00EAC226 /* FligthsCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FligthsCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75DD12991E8AC3DF00EAC226 /* FlightsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlightsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DD12A41E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FligthsCodingTest.xcdatamodel; sourceTree = "<group>"; };
 		75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		75DD129A1E8AC3DF00EAC226 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75DD12991E8AC3DF00EAC226 /* FligthsCodingTest.app */,
+				75DD12991E8AC3DF00EAC226 /* FlightsTest.app */,
 				75DD12B01E8AC3E000EAC226 /* FligthsCodingTestTests.xctest */,
 				75DD12BB1E8AC3E000EAC226 /* FligthsCodingTestUITests.xctest */,
 			);
@@ -296,7 +296,7 @@
 			);
 			name = FligthsCodingTest;
 			productName = FligthsCodingTest;
-			productReference = 75DD12991E8AC3DF00EAC226 /* FligthsCodingTest.app */;
+			productReference = 75DD12991E8AC3DF00EAC226 /* FlightsTest.app */;
 			productType = "com.apple.product-type.application";
 		};
 		75DD12AF1E8AC3E000EAC226 /* FligthsCodingTestTests */ = {
@@ -719,7 +719,7 @@
 				INFOPLIST_FILE = FligthsCodingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlightsTest;
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
 				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
@@ -735,7 +735,7 @@
 				INFOPLIST_FILE = FligthsCodingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlightsTest;
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
 				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
@@ -855,7 +855,7 @@
 				INFOPLIST_FILE = FligthsCodingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlightsTest;
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
 				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
@@ -944,7 +944,7 @@
 				INFOPLIST_FILE = FligthsCodingTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FlightsTest;
 				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
 				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";

@@ -22,6 +22,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Flights search"
+        
         setupSearchBar()
         setupTableView()
 
@@ -42,6 +43,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     func setupSearchBar(){
         searchBarAirports.autocapitalizationType = .allCharacters
         searchBarAirports.delegate = self
+        searchBarAirports.tintColor = UIColor.darkGray
     }
     
     /// Setup the tableview data
