@@ -79,8 +79,6 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
             let number = flight.value(forKey: "FltId") as! String
             let originAirport = flight.value(forKey: "Orig") as! String
             let arrivalTime = flight.value(forKey: "SchedArrTime") as! String
-            //let dateTime = getFlightDate(from: arrivalTime)
-            //let (date,time) = dateTime
             if let entity = FCTStorageManager.sharedInstance.create(entity: "Flight", with: ["number":number,"origin":originAirport,"arrivalDate":arrivalTime,"arrivalTime":arrivalTime]){
               objectManagedData.append(entity)
             }
@@ -155,28 +153,11 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         cell.flightNumber.text = flight.number
         cell.originAirport.text = flight.origin
         cell.arrivalDate.text = flight.arrivalDate
-        cell.arrivalTime.text = flight.arrivalTime
         return cell
         
     }
     
-    /// Format the given date to show in the tableview cell
-    /// - Returns:
-    ///   - A tuple representing the date and time for the given date in format mm/dd/yyyy and HH:mm respectively
-    ///
-    /// - Parameters:
-    ///   - schedArrTime: the date to format and conver to
-    func getFlightDate(from schedArrTime:String) -> (String,String){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
-        let date = dateFormatter.date(from: schedArrTime)
-        let calendar = Calendar.current
-        var components = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
-        components.timeZone = TimeZone(abbreviation: "GMT")!
-        let timeStr = String(format:"%02d:%02d",components.hour!,components.minute!)
-        return (String(format:"%02d/%02d/%d",components.month!,components.day!,components.year!),String(format:"%02d:%02d",components.hour!,components.minute!))
-    }
+    
     
     /// transform a given string date and time into a date
     /// - Returns:
