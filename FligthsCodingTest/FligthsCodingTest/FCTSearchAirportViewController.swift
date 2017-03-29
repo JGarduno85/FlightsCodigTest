@@ -134,8 +134,50 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                     return
                 }
                 
+                var now = Date();
+                var nowComponents = DateComponents()
+                let calendar = Calendar.current
+                nowComponents.year = Calendar.current.component(.year, from: now)
+                nowComponents.month = Calendar.current.component(.month, from: now)
+                nowComponents.day = Calendar.current.component(.day, from: now)
+                nowComponents.hour = Calendar.current.component(.hour, from: now)
+                nowComponents.minute = Calendar.current.component(.minute, from: now)
+                nowComponents.second = Calendar.current.component(.second, from: now)
+                nowComponents.timeZone = TimeZone(abbreviation: "GMT")!
+                now = calendar.date(from: nowComponents)!
+                
+                
+                let arrayFiltered =  responseArray.filter({(item:Any)->(Bool) in
+                   
+                    let itemDict = item as! Dictionary<String,Any>
+                    let schedArrTime =  itemDict["SchedArrTime"] as! String
+                    let schedArrDate = self.getDateTime(from: schedArrTime, with: "yyyy-MM-dd'T'HH:mm:ss")
+                    
+                    if ((schedArrDate?.compare(now)) != nil){
+                        let value = schedArrDate?.timeIntervalSince(now)
+                        let timeDifference = Int(value!) / 60
+                        if timeDifference > 0 && timeDifference < 59
+                        {
+                            return true
+                        }
+                        else{
+                            return false
+                        }
+                    }
+                    
+                    return false
+                    
+                })
+                if arrayFiltered.count == 0
+                {
+                    let alert = UIAlertController(title: "Message", message: "The data to show doesn't meet the criteria of 10 minutes before and 1 hour after your local time", preferredStyle: UIAlertControllerStyle.alert)
+                    let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
                 let flightsViewController = FCTFlightsViewController()
-                flightsViewController.data = responseArray
+                flightsViewController.data = arrayFiltered
                 flightsViewController.currentAirport = name
                 flightsViewController.saveData()
                 self.navigationController?.pushViewController(flightsViewController, animated: true)
@@ -162,6 +204,14 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 self.present(alert, animated: true, completion: nil)
             }
         })
+    }
+    
+    func getDateTime(from dateString:String,with formatDate:String) -> Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = formatDate
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let date = dateFormatter.date(from: dateString)
+        return date
     }
 
 }

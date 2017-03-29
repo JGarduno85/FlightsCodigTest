@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCTFlightsViewController" customModule="FligthsCodingTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCTFlightsViewController" customModule="FlightsTest" customModuleProvider="target">
             <connections>
                 <outlet property="resultsTableView" destination="Nfu-jg-5rf" id="h5W-4L-LTf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,9 +35,6 @@
                             <state key="normal" title="Arrival time">
                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
-                            <connections>
-                                <action selector="filterArrivalTime:" destination="-1" eventType="touchUpInside" id="1BV-WJ-sav"/>
-                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

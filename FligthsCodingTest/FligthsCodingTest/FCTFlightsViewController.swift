@@ -79,9 +79,9 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
             let number = flight.value(forKey: "FltId") as! String
             let originAirport = flight.value(forKey: "Orig") as! String
             let arrivalTime = flight.value(forKey: "SchedArrTime") as! String
-            let dateTime = getFlightDate(from: arrivalTime)
-            let (date,time) = dateTime
-            if let entity = FCTStorageManager.sharedInstance.create(entity: "Flight", with: ["number":number,"origin":originAirport,"arrivalDate":date,"arrivalTime":time]){
+            //let dateTime = getFlightDate(from: arrivalTime)
+            //let (date,time) = dateTime
+            if let entity = FCTStorageManager.sharedInstance.create(entity: "Flight", with: ["number":number,"origin":originAirport,"arrivalDate":arrivalTime,"arrivalTime":arrivalTime]){
               objectManagedData.append(entity)
             }
         }
@@ -172,7 +172,9 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
         let date = dateFormatter.date(from: schedArrTime)
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
+        var components = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
+        components.timeZone = TimeZone(abbreviation: "GMT")!
+        let timeStr = String(format:"%02d:%02d",components.hour!,components.minute!)
         return (String(format:"%02d/%02d/%d",components.month!,components.day!,components.year!),String(format:"%02d:%02d",components.hour!,components.minute!))
     }
     
