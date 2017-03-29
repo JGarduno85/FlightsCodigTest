@@ -88,7 +88,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         FCTStorageManager.sharedInstance.save()
         
     }
-    
+    /// delegate from TimeManager
     func timeUp() {
         if let tempAirport = currentAirport
         {

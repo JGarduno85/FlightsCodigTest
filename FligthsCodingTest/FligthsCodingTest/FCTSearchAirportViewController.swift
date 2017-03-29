@@ -40,8 +40,8 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     
     /// Setup the searchbar data
     func setupSearchBar(){
-        searchBarAirports.delegate = self
         searchBarAirports.autocapitalizationType = .allCharacters
+        searchBarAirports.delegate = self
     }
     
     /// Setup the tableview data
@@ -87,7 +87,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if (text.rangeOfCharacter(from:CharacterSet.letters) != nil) || text.isEmpty{
+        if (text.rangeOfCharacter(from:CharacterSet.letters) != nil) || text.isEmpty || text == "\n"{
             return true
         }
         else {
