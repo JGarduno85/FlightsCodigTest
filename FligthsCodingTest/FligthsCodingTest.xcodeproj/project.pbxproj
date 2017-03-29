@@ -144,14 +144,14 @@
 			name = CoreDataManagement;
 			sourceTree = "<group>";
 		};
-		75AA9E441E8B1C4200377ABF /* Flights */ = {
+		75AA9E441E8B1C4200377ABF /* SearchFlights */ = {
 			isa = PBXGroup;
 			children = (
 				75AA9E491E8B1F2700377ABF /* Cells */,
 				75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */,
 				75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */,
 			);
-			name = Flights;
+			name = SearchFlights;
 			sourceTree = "<group>";
 		};
 		75AA9E491E8B1F2700377ABF /* Cells */ = {
@@ -188,8 +188,8 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75AA9E441E8B1C4200377ABF /* SearchFlights */,
 				756F61521E8B3D7A00C6C427 /* Model */,
-				75AA9E441E8B1C4200377ABF /* Flights */,
 				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
 				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,
 				75DD12DE1E8AD57800EAC226 /* Values */,

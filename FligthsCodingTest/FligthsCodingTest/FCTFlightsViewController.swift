@@ -126,6 +126,41 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
         return (String(format:"%02d/%02d/%d",components.month!,components.day!,components.year!),String(format:"%02d:%02d",components.hour!,components.minute!))
-        ///let components = NSCalendar.currentCalendar.com
+    }
+    
+    func getDateTime(from dateString:String,with formatDate:String) -> Date?{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = formatDate
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let date = dateFormatter.date(from: dateString)
+        return date
+    }
+    
+    
+    
+    @IBAction func filterArrivalTime(_ sender: Any) {
+        guard objectManagedData.count > 0 else{
+            return
+        }
+        
+        let sortedArray = objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
+            if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight{
+                let date1 = getDateTime(from:String(format:"%@T%@",obj1.arrivalDate!,obj1.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
+                let date2 = getDateTime(from:String(format:"%@T%@",obj2.arrivalDate!,obj2.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
+                if let datetemp1 = date1,let datetemp2 = date2{
+                    return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
+                }
+                else{
+                    return false
+                }
+                
+            }
+            return false
+            
+        })
+        objectManagedData.removeAll()
+        objectManagedData = Array(sortedArray)
+        self.resultsTableView.reloadData()
+        
     }
 }
