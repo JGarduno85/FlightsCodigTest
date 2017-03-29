@@ -38,10 +38,12 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         FCTStorageManager.sharedInstance.goToFlights = false
     }
     
+    /// Setup the searchbar data
     func setupSearchBar(){
         searchBarAirports.delegate = self
     }
     
+    /// Setup the tableview data
     func setupTableView(){
         
         self.resultsTableView.register(UINib(nibName:"TableViewCell",bundle:nil), forCellReuseIdentifier: cellIdentifier)
@@ -93,7 +95,10 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         }
     }
 
-    
+    /// Make the request to the API using the ClientAPI
+    ///
+    /// - Parameters:
+    ///   - name:airport 3 digits code
     func makeFlightSearch(forAirport name:String){
         guard !name.isEmpty else{
             return
@@ -144,34 +149,5 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             }
         })
     }
-    
-    
-   /* func save(code: String) {
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        
-        let entity =
-            NSEntityDescription.entity(forEntityName: "Airport",
-                                       in: managedContext)!
-        
-        let airport = NSManagedObject(entity: entity,
-                                     insertInto: managedContext)
-        
-        
-       airport.setValue(code, forKeyPath: "code")
-        
-        do {
-            try managedContext.save()
-            data.append(airport)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }*/
 
 }

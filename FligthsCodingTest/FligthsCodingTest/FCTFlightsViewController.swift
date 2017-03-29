@@ -79,16 +79,19 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
+    /// Setup the navigationBar data
     func setupNavigationBar(){
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action:#selector(backButtonAction))
         self.navigationItem.leftBarButtonItem = backButton
     }
     
+    /// Setup the tableview data
     func setupTableView()
     {
         self.resultsTableView.register(UINib(nibName:"FCTFlightCellTableViewCell",bundle:nil),forCellReuseIdentifier: cellIdentifier)
     }
     
+    ///Used to detect when the user press the back button from the navigationBar and procced to delete the objects stored on CoreData.
     func backButtonAction(){
         FCTStorageManager.sharedInstance.delete(entities: "Flight")
         _ = self.navigationController?.popViewController(animated: true)
@@ -118,6 +121,12 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         
     }
     
+    /// Format the given date to show in the tableview cell
+    /// - Returns:
+    ///   - A tuple representing the date and time for the given date in format mm/dd/yyyy and HH:mm respectively
+    ///
+    /// - Parameters:
+    ///   - schedArrTime: the date to format and conver to
     func getFlightDate(from schedArrTime:String) -> (String,String){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -128,6 +137,13 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         return (String(format:"%02d/%02d/%d",components.month!,components.day!,components.year!),String(format:"%02d:%02d",components.hour!,components.minute!))
     }
     
+    /// transform a given string date and time into a date
+    /// - Returns:
+    ///   - a date from the string given
+    ///
+    /// - Parameters:
+    ///   - dateString: the date string to format
+    ///   - formatDate: the dateformat wanted
     func getDateTime(from dateString:String,with formatDate:String) -> Date?{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatDate

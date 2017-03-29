@@ -37,6 +37,6 @@ import Foundation
     let historySectionTitle = "History"
 
     /// Request 
-    ///
+    /// Authorization values
     let authorizationHeader = "Authorization"
     let authorizationValue = "Basic YWFnZTQxNDAxMjgwODYyNDk3NWFiYWNhZjlhNjZjMDRlMWY6ODYyYTk0NTFhYjliNGY1M2EwZWJiOWI2ZWQ1ZjYwOGM="

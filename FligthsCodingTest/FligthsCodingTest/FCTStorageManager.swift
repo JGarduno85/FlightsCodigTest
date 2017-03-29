@@ -9,14 +9,16 @@
 import Foundation
 
 
-
+/// Define wrapper to manage CoreData and userdefaults storage
 class FCTStorageManager{
     static let sharedInstance = FCTStorageManager()
     
     private init(){}
-    
+    /// Flag to detect whether the user on the FlightsView
+    /// so when it kill the app an enter again, show the flights list with the latest data retrieve
     fileprivate var flightsViewOn:Bool = false
     
+    ///To allow acces to the stored propertie flightsViewOn
     var goToFlights:Bool{
         get{
             return flightsViewOn
@@ -26,12 +28,19 @@ class FCTStorageManager{
         }
     }
     
+    /// save a user default 
+    /// - Parameters:
+    ///     - key: the dictionary key
+    ///     - value: the dictionary value
     func saveUserDefault(forkey key:String,value:Any){
         let userDefault = UserDefaults()
         userDefault.setValue(value, forKey: key)
         userDefault.synchronize()
     }
     
+    /// retrieve a user default
+    /// - Parameters:
+    ///     - key: the dictionary key
     func getUserDefault(forkey key:String) -> Any?{
         let userDefault = UserDefaults()
         if let value = userDefault.value(forKey: key){
@@ -41,12 +50,22 @@ class FCTStorageManager{
         }
     }
     
+    /// delete a user default
+    /// - Parameters:
+    ///     - key: the dictionary key
     func deleteUserDefault(forKey key:String){
         let userDefault = UserDefaults()
         userDefault.removeObject(forKey: key)
     }
     
     
+    /// create a new object model entity
+    /// - Returns:
+    ///   - the NSManageObject  model created
+    ///
+    /// - Parameters:
+    ///   - name: the object model or entity name
+    ///   - properties: a dictionary filled with values for the entity attributes
     func create(entity name: String,with properties:Dictionary<String,String>) -> NSManagedObject? {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -72,6 +91,10 @@ class FCTStorageManager{
         
     }
     
+    /// delete an object model entity
+    ///
+    /// - Parameters:
+    ///   - entities: the object model or entity name
     func delete(entities name:String){
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -89,7 +112,10 @@ class FCTStorageManager{
 
     }
     
-    
+    /// fetch objects from the model entity
+    ///
+    /// - Parameters:
+    ///   - entities: the object model or entity name
     func fetchEntities(name:String) -> [NSManagedObject]?{
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -111,6 +137,7 @@ class FCTStorageManager{
         }
     }
     
+    /// save the current model context
     func save(){
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
