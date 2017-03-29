@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12047CD67C8ED833369F64BC /* libPods-FligthsCodingTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A036A6676AD4D38FC150EB03 /* libPods-FligthsCodingTestTests.a */; };
+		4857CDAA25B4C6105CF90C7E /* libPods-FligthsCodingTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774F08782D13105CBF46FFC /* libPods-FligthsCodingTest.a */; };
+		756F61541E8B3D8700C6C427 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F61531E8B3D8700C6C427 /* Flight.swift */; };
+		75AA9E431E8B08D400377ABF /* FCTStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA9E421E8B08D400377ABF /* FCTStorageManager.swift */; };
+		75AA9E471E8B1CEB00377ABF /* FCTFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */; };
+		75AA9E481E8B1CEB00377ABF /* FCTFlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */; };
+		75AA9E4C1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA9E4A1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift */; };
+		75AA9E4D1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AA9E4B1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib */; };
 		75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */; };
 		75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12A31E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld */; };
 		75DD12A71E8AC3DF00EAC226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */; };
 		75DD12AA1E8AC3DF00EAC226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12A81E8AC3DF00EAC226 /* LaunchScreen.storyboard */; };
 		75DD12B51E8AC3E000EAC226 /* FligthsCodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12B41E8AC3E000EAC226 /* FligthsCodingTestTests.swift */; };
 		75DD12C01E8AC3E000EAC226 /* FligthsCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12BF1E8AC3E000EAC226 /* FligthsCodingTestUITests.swift */; };
-		75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */; };
-		75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */; };
-		75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */; };
-		75DD12DD1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */; };
+		75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */; };
+		75DD12E31E8AE3D000EAC226 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12E21E8AE3D000EAC226 /* APIClient.swift */; };
+		75DD12EE1E8AED7100EAC226 /* FCTSearchAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12EC1E8AED7100EAC226 /* FCTSearchAirportViewController.swift */; };
+		75DD12EF1E8AED7100EAC226 /* FCTSearchAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12ED1E8AED7100EAC226 /* FCTSearchAirportViewController.xib */; };
+		75DD12F21E8AEE8D00EAC226 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12F01E8AEE8D00EAC226 /* TableViewCell.swift */; };
+		75DD12F31E8AEE8D00EAC226 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */; };
+		FD919FD5BEA5A7AF266C46BA /* libPods-FligthsCodingTestUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		117B0AD56DA2DB2BBDC30CC2 /* Pods-FligthsCodingTest.beta_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.beta_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.beta_release.xcconfig"; sourceTree = "<group>"; };
+		30D3000F8E6A64CAEB41C37C /* Pods-FligthsCodingTest.alpha_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.alpha_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.alpha_release.xcconfig"; sourceTree = "<group>"; };
+		3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FligthsCodingTestUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6503524C68EC9F684794F4BB /* Pods-FligthsCodingTestUITests.alpha_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.alpha_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.alpha_release.xcconfig"; sourceTree = "<group>"; };
+		6774F08782D13105CBF46FFC /* libPods-FligthsCodingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FligthsCodingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		756F61531E8B3D8700C6C427 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		75AA9E421E8B08D400377ABF /* FCTStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTStorageManager.swift; sourceTree = "<group>"; };
+		75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTFlightsViewController.swift; sourceTree = "<group>"; };
+		75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTFlightsViewController.xib; sourceTree = "<group>"; };
+		75AA9E4A1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTFlightCellTableViewCell.swift; sourceTree = "<group>"; };
+		75AA9E4B1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTFlightCellTableViewCell.xib; sourceTree = "<group>"; };
 		75DD12991E8AC3DF00EAC226 /* FligthsCodingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FligthsCodingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75DD12A41E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FligthsCodingTest.xcdatamodel; sourceTree = "<group>"; };
@@ -49,10 +71,23 @@
 		75DD12BB1E8AC3E000EAC226 /* FligthsCodingTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FligthsCodingTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DD12BF1E8AC3E000EAC226 /* FligthsCodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FligthsCodingTestUITests.swift; sourceTree = "<group>"; };
 		75DD12C11E8AC3E000EAC226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTMainViewController.swift; sourceTree = "<group>"; };
-		75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTMainViewController.xib; sourceTree = "<group>"; };
-		75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTSearchAirportViewController.swift; sourceTree = "<group>"; };
-		75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTSearchAirportViewController.xib; sourceTree = "<group>"; };
+		75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		75DD12E21E8AE3D000EAC226 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		75DD12E41E8AE63E00EAC226 /* BridgeFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeFile.h; sourceTree = "<group>"; };
+		75DD12EC1E8AED7100EAC226 /* FCTSearchAirportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTSearchAirportViewController.swift; sourceTree = "<group>"; };
+		75DD12ED1E8AED7100EAC226 /* FCTSearchAirportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTSearchAirportViewController.xib; sourceTree = "<group>"; };
+		75DD12F01E8AEE8D00EAC226 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		88B6AE3DAE3D324D4E3F2F0B /* Pods-FligthsCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
+		8D8DE984CED0A44D9018F72E /* Pods-FligthsCodingTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		93ECDE11033FF78E68259D1B /* Pods-FligthsCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.release.xcconfig"; sourceTree = "<group>"; };
+		9923EF2FF478216424AEE0FE /* Pods-FligthsCodingTestTests.beta_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestTests.beta_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests.beta_release.xcconfig"; sourceTree = "<group>"; };
+		A036A6676AD4D38FC150EB03 /* libPods-FligthsCodingTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FligthsCodingTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC9F48D0D20D75F1D8997512 /* Pods-FligthsCodingTestUITests.beta_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.beta_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.beta_release.xcconfig"; sourceTree = "<group>"; };
+		CAD709B129AEF8BD5432EC82 /* Pods-FligthsCodingTestTests.alpha_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestTests.alpha_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests.alpha_release.xcconfig"; sourceTree = "<group>"; };
+		D1B045AD4306F05FCF300D0F /* Pods-FligthsCodingTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE3977D2B81C09E48A971D00 /* Pods-FligthsCodingTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBCDBFF0CD836852C0A7C410 /* Pods-FligthsCodingTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4857CDAA25B4C6105CF90C7E /* libPods-FligthsCodingTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12047CD67C8ED833369F64BC /* libPods-FligthsCodingTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +111,58 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD919FD5BEA5A7AF266C46BA /* libPods-FligthsCodingTestUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A6636B6326955C5DC5EAE0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6774F08782D13105CBF46FFC /* libPods-FligthsCodingTest.a */,
+				A036A6676AD4D38FC150EB03 /* libPods-FligthsCodingTestTests.a */,
+				3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		756F61521E8B3D7A00C6C427 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				756F61531E8B3D8700C6C427 /* Flight.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		75AA9E411E8B08B500377ABF /* CoreDataManagement */ = {
+			isa = PBXGroup;
+			children = (
+				75AA9E421E8B08D400377ABF /* FCTStorageManager.swift */,
+			);
+			name = CoreDataManagement;
+			sourceTree = "<group>";
+		};
+		75AA9E441E8B1C4200377ABF /* SearchFlights */ = {
+			isa = PBXGroup;
+			children = (
+				75AA9E491E8B1F2700377ABF /* Cells */,
+				75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */,
+				75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */,
+			);
+			name = SearchFlights;
+			sourceTree = "<group>";
+		};
+		75AA9E491E8B1F2700377ABF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				75AA9E4A1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift */,
+				75AA9E4B1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		75DD12901E8AC3DE00EAC226 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +170,8 @@
 				75DD12B31E8AC3E000EAC226 /* FligthsCodingTestTests */,
 				75DD12BE1E8AC3E000EAC226 /* FligthsCodingTestUITests */,
 				75DD129A1E8AC3DF00EAC226 /* Products */,
+				BB6B4AE8FE3AAEDCDC0DA837 /* Pods */,
+				6A6636B6326955C5DC5EAE0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +188,13 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75AA9E441E8B1C4200377ABF /* SearchFlights */,
+				756F61521E8B3D7A00C6C427 /* Model */,
+				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
+				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,
+				75DD12DE1E8AD57800EAC226 /* Values */,
 				75DD12D91E8AC9FD00EAC226 /* SearchAirport */,
 				75DD129C1E8AC3DF00EAC226 /* AppDelegate.swift */,
-				75DD12CD1E8AC4BA00EAC226 /* FCTMainViewController.swift */,
-				75DD12CE1E8AC4BB00EAC226 /* FCTMainViewController.xib */,
 				75DD12A61E8AC3DF00EAC226 /* Assets.xcassets */,
 				75DD12A81E8AC3DF00EAC226 /* LaunchScreen.storyboard */,
 				75DD12AB1E8AC3DF00EAC226 /* Info.plist */,
@@ -136,10 +224,56 @@
 		75DD12D91E8AC9FD00EAC226 /* SearchAirport */ = {
 			isa = PBXGroup;
 			children = (
-				75DD12DA1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift */,
-				75DD12DB1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib */,
+				75DD12E51E8AE84A00EAC226 /* ResultCells */,
+				75DD12EC1E8AED7100EAC226 /* FCTSearchAirportViewController.swift */,
+				75DD12ED1E8AED7100EAC226 /* FCTSearchAirportViewController.xib */,
 			);
 			name = SearchAirport;
+			sourceTree = "<group>";
+		};
+		75DD12DE1E8AD57800EAC226 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				75DD12DF1E8AD5E800EAC226 /* GlobalConstants.swift */,
+				75DD12E41E8AE63E00EAC226 /* BridgeFile.h */,
+			);
+			name = Values;
+			sourceTree = "<group>";
+		};
+		75DD12E11E8ADAB800EAC226 /* NetworkManagement */ = {
+			isa = PBXGroup;
+			children = (
+				75DD12E21E8AE3D000EAC226 /* APIClient.swift */,
+			);
+			name = NetworkManagement;
+			sourceTree = "<group>";
+		};
+		75DD12E51E8AE84A00EAC226 /* ResultCells */ = {
+			isa = PBXGroup;
+			children = (
+				75DD12F01E8AEE8D00EAC226 /* TableViewCell.swift */,
+				75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */,
+			);
+			name = ResultCells;
+			sourceTree = "<group>";
+		};
+		BB6B4AE8FE3AAEDCDC0DA837 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88B6AE3DAE3D324D4E3F2F0B /* Pods-FligthsCodingTest.debug.xcconfig */,
+				93ECDE11033FF78E68259D1B /* Pods-FligthsCodingTest.release.xcconfig */,
+				117B0AD56DA2DB2BBDC30CC2 /* Pods-FligthsCodingTest.beta_release.xcconfig */,
+				30D3000F8E6A64CAEB41C37C /* Pods-FligthsCodingTest.alpha_release.xcconfig */,
+				EBCDBFF0CD836852C0A7C410 /* Pods-FligthsCodingTestTests.debug.xcconfig */,
+				D1B045AD4306F05FCF300D0F /* Pods-FligthsCodingTestTests.release.xcconfig */,
+				9923EF2FF478216424AEE0FE /* Pods-FligthsCodingTestTests.beta_release.xcconfig */,
+				CAD709B129AEF8BD5432EC82 /* Pods-FligthsCodingTestTests.alpha_release.xcconfig */,
+				DE3977D2B81C09E48A971D00 /* Pods-FligthsCodingTestUITests.debug.xcconfig */,
+				8D8DE984CED0A44D9018F72E /* Pods-FligthsCodingTestUITests.release.xcconfig */,
+				BC9F48D0D20D75F1D8997512 /* Pods-FligthsCodingTestUITests.beta_release.xcconfig */,
+				6503524C68EC9F684794F4BB /* Pods-FligthsCodingTestUITests.alpha_release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,9 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75DD12C41E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTest" */;
 			buildPhases = (
+				F61684B506B5E138F18799E1 /* [CP] Check Pods Manifest.lock */,
 				75DD12951E8AC3DE00EAC226 /* Sources */,
 				75DD12961E8AC3DE00EAC226 /* Frameworks */,
 				75DD12971E8AC3DE00EAC226 /* Resources */,
+				D3F2127EA1DB2E504A631869 /* [CP] Embed Pods Frameworks */,
+				F3744281F6887128D9BC5620 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,9 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75DD12C71E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestTests" */;
 			buildPhases = (
+				8F14D5FAC1FCE803A59F209A /* [CP] Check Pods Manifest.lock */,
 				75DD12AC1E8AC3E000EAC226 /* Sources */,
 				75DD12AD1E8AC3E000EAC226 /* Frameworks */,
 				75DD12AE1E8AC3E000EAC226 /* Resources */,
+				22145E3A9235F73AF86D269A /* [CP] Embed Pods Frameworks */,
+				B711D06B131D279436ECD0A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,9 +324,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75DD12CA1E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestUITests" */;
 			buildPhases = (
+				807B8E32C118C3DD8B10B3FD /* [CP] Check Pods Manifest.lock */,
 				75DD12B71E8AC3E000EAC226 /* Sources */,
 				75DD12B81E8AC3E000EAC226 /* Frameworks */,
 				75DD12B91E8AC3E000EAC226 /* Resources */,
+				ADD83B2A6BF3B1A5F8D7E3E3 /* [CP] Embed Pods Frameworks */,
+				49811C31013DDE530AB1CC50 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,9 +396,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75DD12AA1E8AC3DF00EAC226 /* LaunchScreen.storyboard in Resources */,
+				75AA9E481E8B1CEB00377ABF /* FCTFlightsViewController.xib in Resources */,
+				75DD12F31E8AEE8D00EAC226 /* TableViewCell.xib in Resources */,
 				75DD12A71E8AC3DF00EAC226 /* Assets.xcassets in Resources */,
-				75DD12DD1E8ACA1500EAC226 /* FCTSearchAirportViewController.xib in Resources */,
-				75DD12D01E8AC4BB00EAC226 /* FCTMainViewController.xib in Resources */,
+				75DD12EF1E8AED7100EAC226 /* FCTSearchAirportViewController.xib in Resources */,
+				75AA9E4D1E8B1F6800377ABF /* FCTFlightCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,15 +420,159 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		22145E3A9235F73AF86D269A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49811C31013DDE530AB1CC50 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		807B8E32C118C3DD8B10B3FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F14D5FAC1FCE803A59F209A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADD83B2A6BF3B1A5F8D7E3E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B711D06B131D279436ECD0A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTestTests/Pods-FligthsCodingTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3F2127EA1DB2E504A631869 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3744281F6887128D9BC5620 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F61684B506B5E138F18799E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		75DD12951E8AC3DE00EAC226 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75DD12CF1E8AC4BB00EAC226 /* FCTMainViewController.swift in Sources */,
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
-				75DD12DC1E8ACA1500EAC226 /* FCTSearchAirportViewController.swift in Sources */,
+				75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */,
+				75DD12EE1E8AED7100EAC226 /* FCTSearchAirportViewController.swift in Sources */,
+				756F61541E8B3D8700C6C427 /* Flight.swift in Sources */,
+				75DD12F21E8AEE8D00EAC226 /* TableViewCell.swift in Sources */,
+				75DD12E31E8AE3D000EAC226 /* APIClient.swift in Sources */,
 				75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */,
+				75AA9E4C1E8B1F6800377ABF /* FCTFlightCellTableViewCell.swift in Sources */,
+				75AA9E471E8B1CEB00377ABF /* FCTFlightsViewController.swift in Sources */,
+				75AA9E431E8B08D400377ABF /* FCTStorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +712,7 @@
 		};
 		75DD12C51E8AC3E000EAC226 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88B6AE3DAE3D324D4E3F2F0B /* Pods-FligthsCodingTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -430,13 +720,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Debug;
 		};
 		75DD12C61E8AC3E000EAC226 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93ECDE11033FF78E68259D1B /* Pods-FligthsCodingTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -444,13 +736,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Release;
 		};
 		75DD12C81E8AC3E000EAC226 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBCDBFF0CD836852C0A7C410 /* Pods-FligthsCodingTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,6 +760,7 @@
 		};
 		75DD12C91E8AC3E000EAC226 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1B045AD4306F05FCF300D0F /* Pods-FligthsCodingTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -481,6 +776,7 @@
 		};
 		75DD12CB1E8AC3E000EAC226 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE3977D2B81C09E48A971D00 /* Pods-FligthsCodingTestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -495,6 +791,7 @@
 		};
 		75DD12CC1E8AC3E000EAC226 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8DE984CED0A44D9018F72E /* Pods-FligthsCodingTestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -551,6 +848,7 @@
 		};
 		75DD12D21E8AC8D300EAC226 /* Beta_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 117B0AD56DA2DB2BBDC30CC2 /* Pods-FligthsCodingTest.beta_release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -558,13 +856,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Beta_Release;
 		};
 		75DD12D31E8AC8D300EAC226 /* Beta_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9923EF2FF478216424AEE0FE /* Pods-FligthsCodingTestTests.beta_release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,6 +880,7 @@
 		};
 		75DD12D41E8AC8D300EAC226 /* Beta_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC9F48D0D20D75F1D8997512 /* Pods-FligthsCodingTestUITests.beta_release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -636,6 +937,7 @@
 		};
 		75DD12D61E8AC8EF00EAC226 /* Alpha_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30D3000F8E6A64CAEB41C37C /* Pods-FligthsCodingTest.alpha_release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -643,13 +945,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sysus.com.FligthsCodingTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FligthsCodingTest/BridgeFile.h;
 				SWIFT_VERSION = 3.0;
-				WebServiceBaseUrl = "https://api.qa.alaskaair.com";
+				WEB_SERVICE_BASE_URL = "https://api.qa.alaskaair.com";
 			};
 			name = Alpha_Release;
 		};
 		75DD12D71E8AC8EF00EAC226 /* Alpha_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAD709B129AEF8BD5432EC82 /* Pods-FligthsCodingTestTests.alpha_release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -665,6 +969,7 @@
 		};
 		75DD12D81E8AC8EF00EAC226 /* Alpha_Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6503524C68EC9F684794F4BB /* Pods-FligthsCodingTestUITests.alpha_release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 53G2VW7YM8;
@@ -700,6 +1005,7 @@
 				75DD12D61E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75DD12C71E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +1016,7 @@
 				75DD12D71E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75DD12CA1E8AC3E000EAC226 /* Build configuration list for PBXNativeTarget "FligthsCodingTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -720,6 +1027,7 @@
 				75DD12D81E8AC8EF00EAC226 /* Alpha_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

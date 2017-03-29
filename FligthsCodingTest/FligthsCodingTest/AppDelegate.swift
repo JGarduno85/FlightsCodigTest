@@ -9,18 +9,20 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         ///
-        /// MainViewController is used to show a Basic LoginView
-        let mainViewController = FCTMainViewController()
+       
+        let mainViewController:UIViewController =  FCTSearchAirportViewController()
         let mainNavigationViewController =  UINavigationController(rootViewController: mainViewController)
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = mainNavigationViewController
         self.window?.makeKeyAndVisible()
@@ -48,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        if(FCTStorageManager.sharedInstance.goToFlights)
+        {
+            FCTStorageManager.sharedInstance.saveUserDefault(forkey: "goToFlightsView", value: true)
+        }
         self.saveContext()
     }
 
