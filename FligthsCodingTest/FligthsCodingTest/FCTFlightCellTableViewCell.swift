@@ -12,11 +12,13 @@ class FCTFlightCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var flightNumber: UILabel!
     @IBOutlet weak var originAirport: UILabel!
+    @IBOutlet weak var arrivalDate: UILabel!
     @IBOutlet weak var arrivalTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

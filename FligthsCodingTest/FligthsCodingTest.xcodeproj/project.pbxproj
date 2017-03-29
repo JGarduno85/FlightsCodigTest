@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		12047CD67C8ED833369F64BC /* libPods-FligthsCodingTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A036A6676AD4D38FC150EB03 /* libPods-FligthsCodingTestTests.a */; };
 		4857CDAA25B4C6105CF90C7E /* libPods-FligthsCodingTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6774F08782D13105CBF46FFC /* libPods-FligthsCodingTest.a */; };
+		756F61541E8B3D8700C6C427 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756F61531E8B3D8700C6C427 /* Flight.swift */; };
 		75AA9E431E8B08D400377ABF /* FCTStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA9E421E8B08D400377ABF /* FCTStorageManager.swift */; };
 		75AA9E471E8B1CEB00377ABF /* FCTFlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */; };
 		75AA9E481E8B1CEB00377ABF /* FCTFlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */; };
@@ -52,6 +53,7 @@
 		3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FligthsCodingTestUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6503524C68EC9F684794F4BB /* Pods-FligthsCodingTestUITests.alpha_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.alpha_release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.alpha_release.xcconfig"; sourceTree = "<group>"; };
 		6774F08782D13105CBF46FFC /* libPods-FligthsCodingTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FligthsCodingTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		756F61531E8B3D8700C6C427 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		75AA9E421E8B08D400377ABF /* FCTStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTStorageManager.swift; sourceTree = "<group>"; };
 		75AA9E451E8B1CEB00377ABF /* FCTFlightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCTFlightsViewController.swift; sourceTree = "<group>"; };
 		75AA9E461E8B1CEB00377ABF /* FCTFlightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTFlightsViewController.xib; sourceTree = "<group>"; };
@@ -126,6 +128,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		756F61521E8B3D7A00C6C427 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				756F61531E8B3D8700C6C427 /* Flight.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		75AA9E411E8B08B500377ABF /* CoreDataManagement */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				756F61521E8B3D7A00C6C427 /* Model */,
 				75AA9E4E1E8B247900377ABF /* Utilities */,
 				75AA9E441E8B1C4200377ABF /* Flights */,
 				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
@@ -563,6 +574,7 @@
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
 				75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */,
 				75DD12EE1E8AED7100EAC226 /* FCTSearchAirportViewController.swift in Sources */,
+				756F61541E8B3D8700C6C427 /* Flight.swift in Sources */,
 				75DD12F21E8AEE8D00EAC226 /* TableViewCell.swift in Sources */,
 				75DD12E31E8AE3D000EAC226 /* APIClient.swift in Sources */,
 				75DD129D1E8AC3DF00EAC226 /* AppDelegate.swift in Sources */,

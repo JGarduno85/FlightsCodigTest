@@ -33,24 +33,8 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     func setupTableView(){
         
         self.resultsTableView.register(UINib(nibName:"TableViewCell",bundle:nil), forCellReuseIdentifier: cellIdentifier)
+        data = FCTStorageManager.sharedInstance.fetchEntities(name: airportEntity) ?? []
         
-        
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest =
-            NSFetchRequest<NSManagedObject>(entityName:airportEntity)
-        
-        do {
-            data = try managedContext.fetch(fetchRequest)
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,7 +65,9 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let airport = data[indexPath.row]
+        let code = airport.value(forKey: airportCode) as! String
+        makeFlightSearch(forAirport: code)
     }
 
     
@@ -105,29 +91,43 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         MBProgressHUD.showAdded(to: self.view, animated: true)
         APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in
             
-            
+            let responseArray = response as! Array<Any>
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
-                //self.responseText.text = response.debugDescription
-                //print(response)
-               // FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name])
                 
+                guard responseArray.count > 0 else{
+                    let alert = UIAlertController(title: "Message", message: "The search doesn't retrieve any result, try with another search criteria", preferredStyle: UIAlertControllerStyle.alert)
+                    let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
                 
-                
-                
+                let flightsViewController = FCTFlightsViewController()
+                flightsViewController.data = responseArray
+                self.navigationController?.pushViewController(flightsViewController, animated: true)
+                let airportArray =  self.data.filter({(aManagedObject:NSManagedObject) -> (Bool) in
+                    let airport = aManagedObject as! Airport
+                    return airport.code == name
+                })
+                //the airport is not repeated in the history so we add it
+                if airportArray.count == 0
+                {
+                    if let entity = FCTStorageManager.sharedInstance.create(entity: airportEntity, with: [airportCode:name]){
+                        self.data.append(entity)
+                        self.resultsTableView.reloadData()
+                    }
+                }
             }
         }, failureClosure: {(error:Error) in
             DispatchQueue.main.async {
                 MBProgressHUD.hide(for: self.view, animated: true)
-                let alert = UIAlertController(title: "Error", message: "It appears there's a problem with the server", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: "Comunication problem with the server", preferredStyle: UIAlertControllerStyle.alert)
                 let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
                 alert.addAction(alertAction)
                 self.present(alert, animated: true, completion: nil)
             }
         })
-        
-       
-        //save(code: name)
     }
     
     
