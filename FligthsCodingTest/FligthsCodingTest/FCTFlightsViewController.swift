@@ -16,12 +16,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        data.sort(by: {(item1:Any,item2:Any) -> Bool in
-//            let flight1 = item1 as! NSDictionary
-//            let flight2 = item2 as! NSDictionary
-//            
-//            
-//        })
+
         setupTableView()
         // Do any additional setup after loading the view.
     }
@@ -55,10 +50,24 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         let number = flight.value(forKey: "FltId") as! String
         let originAirport = flight.value(forKey: "Orig") as! String
         let arrivalTime = flight.value(forKey: "SchedArrTime") as! String
+        let dateTime = getFlightDate(from: arrivalTime)
+        let (date,time) = dateTime
         cell.flightNumber.text = number
         cell.originAirport.text = originAirport
-        cell.arrivalTime.text = arrivalTime
+        cell.arrivalDate.text = date
+        cell.arrivalTime.text = time
         return cell
         
+    }
+    
+    func getFlightDate(from schedArrTime:String) -> (String,String){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
+        let date = dateFormatter.date(from: schedArrTime)
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: date!)
+        return (String(format:"%02d/%02d/%d",components.month!,components.day!,components.year!),String(format:"%02d:%02d",components.hour!,components.minute!))
+        ///let components = NSCalendar.currentCalendar.com
     }
 }
