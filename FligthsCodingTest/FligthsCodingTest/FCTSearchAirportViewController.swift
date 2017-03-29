@@ -134,6 +134,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
                 
                 let flightsViewController = FCTFlightsViewController()
                 flightsViewController.data = responseArray
+                flightsViewController.currentAirport = name
                 flightsViewController.saveData()
                 self.navigationController?.pushViewController(flightsViewController, animated: true)
                 let airportArray =  self.data.filter({(aManagedObject:NSManagedObject) -> (Bool) in

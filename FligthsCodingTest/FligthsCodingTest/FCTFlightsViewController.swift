@@ -8,13 +8,15 @@
 
 import UIKit
 
-class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,TimeManagerDelegate {
 
     @IBOutlet weak var resultsTableView: UITableView!
     var data:[Any] = []
     var objectManagedData:[NSManagedObject] = []
     let cellIdentifier = "Cell"
     var openFromDelegate = false
+    var timeManager:TimeManager?
+    var currentAirport:String?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -40,6 +42,10 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
                 objectManagedData = fetchedData
             }
         }
+        self.timeManager = TimeManager()
+        self.timeManager?.delegate = self
+        timeManager?.starTimer()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,14 +57,22 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         super.viewWillAppear(animated)
         if self.openFromDelegate{
             self.openFromDelegate = false
+            let tempCurrentAirport = FCTStorageManager.sharedInstance.getUserDefault(forkey: "currentAirport")
+            self.currentAirport = tempCurrentAirport as? String
             self.resultsTableView.reloadData()
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        timeManager?.stopTimer()
+        timeManager?.delegate = nil
+        timeManager = nil
+        FCTStorageManager.sharedInstance.saveUserDefault(forkey: "currentAirport", value: currentAirport ?? "")
+        
     }
     
+    /// Create the core data entities from the json rettrieve and save the context
     func saveData(){
         for item in data{
             let flight = item as! NSDictionary
@@ -73,6 +87,31 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
         }
         FCTStorageManager.sharedInstance.save()
         
+    }
+    
+    func timeUp() {
+        if let tempAirport = currentAirport
+        {
+            let endpoint = String(format:airportsEndPoint,tempAirport,10,60)
+            let getMethod = "GET"
+            APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in
+            
+                let responseArray = response as! Array<Any>
+                DispatchQueue.main.async {
+                    guard responseArray.count > 0 else{
+                        return
+                    }
+                
+                self.data = responseArray
+                self.saveData()
+                self.resultsTableView.reloadData()
+                self.timeManager?.starTimer()
+
+            }
+            }, failureClosure: {(error:Error) in
+
+            })
+        }
     }
     
     /// Setup the navigationBar data

@@ -26,6 +26,7 @@
 		75DD12EF1E8AED7100EAC226 /* FCTSearchAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12ED1E8AED7100EAC226 /* FCTSearchAirportViewController.xib */; };
 		75DD12F21E8AEE8D00EAC226 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DD12F01E8AEE8D00EAC226 /* TableViewCell.swift */; };
 		75DD12F31E8AEE8D00EAC226 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */; };
+		75E767D91E8BFC1500FCBC54 /* FlightsTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E767D81E8BFC1500FCBC54 /* FlightsTimeManager.swift */; };
 		FD919FD5BEA5A7AF266C46BA /* libPods-FligthsCodingTestUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3543C732CB5C056ADD0609B2 /* libPods-FligthsCodingTestUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		75DD12ED1E8AED7100EAC226 /* FCTSearchAirportViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCTSearchAirportViewController.xib; sourceTree = "<group>"; };
 		75DD12F01E8AEE8D00EAC226 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		75E767D81E8BFC1500FCBC54 /* FlightsTimeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsTimeManager.swift; sourceTree = "<group>"; };
 		88B6AE3DAE3D324D4E3F2F0B /* Pods-FligthsCodingTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8DE984CED0A44D9018F72E /* Pods-FligthsCodingTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTestUITests/Pods-FligthsCodingTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		93ECDE11033FF78E68259D1B /* Pods-FligthsCodingTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FligthsCodingTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-FligthsCodingTest/Pods-FligthsCodingTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		75DD129B1E8AC3DF00EAC226 /* FligthsCodingTest */ = {
 			isa = PBXGroup;
 			children = (
+				75E767D71E8BFBFA00FCBC54 /* Utilities */,
 				75AA9E441E8B1C4200377ABF /* SearchFlights */,
 				75AA9E411E8B08B500377ABF /* CoreDataManagement */,
 				75DD12E11E8ADAB800EAC226 /* NetworkManagement */,
@@ -244,6 +247,14 @@
 				75DD12F11E8AEE8D00EAC226 /* TableViewCell.xib */,
 			);
 			name = ResultCells;
+			sourceTree = "<group>";
+		};
+		75E767D71E8BFBFA00FCBC54 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				75E767D81E8BFC1500FCBC54 /* FlightsTimeManager.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		BB6B4AE8FE3AAEDCDC0DA837 /* Pods */ = {
@@ -552,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75E767D91E8BFC1500FCBC54 /* FlightsTimeManager.swift in Sources */,
 				75DD12A51E8AC3DF00EAC226 /* FligthsCodingTest.xcdatamodeld in Sources */,
 				75DD12E01E8AD5E800EAC226 /* GlobalConstants.swift in Sources */,
 				75DD12EE1E8AED7100EAC226 /* FCTSearchAirportViewController.swift in Sources */,
