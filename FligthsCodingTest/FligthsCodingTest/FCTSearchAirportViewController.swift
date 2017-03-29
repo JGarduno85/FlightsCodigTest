@@ -21,7 +21,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.navigationItem.title = "Flights search"
         setupSearchBar()
         setupTableView()
 
@@ -41,6 +41,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
     /// Setup the searchbar data
     func setupSearchBar(){
         searchBarAirports.delegate = self
+        searchBarAirports.autocapitalizationType = .allCharacters
     }
     
     /// Setup the tableview data
@@ -84,6 +85,15 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         let code = airport.value(forKey: airportCode) as! String
         makeFlightSearch(forAirport: code)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text.rangeOfCharacter(from:CharacterSet.letters) != nil) || text.isEmpty{
+            return true
+        }
+        else {
+            return false
+        }
+    }
 
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -95,6 +105,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
         }
     }
 
+
     /// Make the request to the API using the ClientAPI
     ///
     /// - Parameters:
@@ -104,7 +115,7 @@ class FCTSearchAirportViewController: UIViewController,UITableViewDataSource, UI
             return
         }
         
-        let endpoint = String(format:airportsEndPoint,name,10,120)
+        let endpoint = String(format:airportsEndPoint,name,10,60)
         let getMethod = "GET"
         MBProgressHUD.showAdded(to: self.view, animated: true)
         APIClient.sharedInstance.clientCallWithEndPointUrl(endPoint:endpoint, method: getMethod, dataDictionary:nil, successClosure:{(response:Any?) in

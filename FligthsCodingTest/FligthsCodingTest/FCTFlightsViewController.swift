@@ -57,10 +57,6 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        //if self.navigationController?.viewControllers.index(of: self) == NSNotFound{
-        //    FCTStorageManager.sharedInstance.delete(entities: "Flight")
-        //}
-        
     }
     
     func saveData(){
@@ -81,6 +77,7 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
     
     /// Setup the navigationBar data
     func setupNavigationBar(){
+        self.navigationItem.title = "Flights schedules"
         let backButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action:#selector(backButtonAction))
         self.navigationItem.leftBarButtonItem = backButton
     }
@@ -159,24 +156,31 @@ class FCTFlightsViewController: UIViewController,UITableViewDataSource,UITableVi
             return
         }
         
-        let sortedArray = objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
-            if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight{
-                let date1 = getDateTime(from:String(format:"%@T%@",obj1.arrivalDate!,obj1.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
-                let date2 = getDateTime(from:String(format:"%@T%@",obj2.arrivalDate!,obj2.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
-                if let datetemp1 = date1,let datetemp2 = date2{
-                    return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
+        let sortedThread = DispatchQueue(label: "sortedThread")
+        weak var weakSelf  = self
+        sortedThread.async{
+            let sortedArray = weakSelf?.objectManagedData.sorted(by: {(item1:NSManagedObject,item2:NSManagedObject) -> Bool in
+                if let obj1 = item1 as? Flight, let obj2 = item2 as? Flight{
+                    let date1 = weakSelf?.getDateTime(from:String(format:"%@T%@",obj1.arrivalDate!,obj1.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
+                    let date2 = weakSelf?.getDateTime(from:String(format:"%@T%@",obj2.arrivalDate!,obj2.arrivalTime!), with: "mm-dd-yyyy'T'HH:mm")
+                    if let datetemp1 = date1,let datetemp2 = date2{
+                        return (datetemp1.compare(datetemp2)) == ComparisonResult.orderedAscending
+                    }
+                    else{
+                        return false
+                    }
+                    
                 }
-                else{
-                    return false
-                }
+                return false
                 
+            })
+            weakSelf?.objectManagedData.removeAll()
+            if let tempSortedArray = sortedArray{
+                weakSelf?.objectManagedData = Array(tempSortedArray)
+                DispatchQueue.main.async {
+                    weakSelf?.resultsTableView.reloadData()
+                }
             }
-            return false
-            
-        })
-        objectManagedData.removeAll()
-        objectManagedData = Array(sortedArray)
-        self.resultsTableView.reloadData()
-        
+        }
     }
 }
